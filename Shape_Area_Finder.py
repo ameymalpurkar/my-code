@@ -1,5 +1,4 @@
-from cmath import sqrt
-
+# this a square class that performs all operations on square shape
 class Square:
     def __init__(self, side):
         self.side = side
@@ -10,7 +9,7 @@ class Square:
     def area (self):
         return self.side * self.side
         
-
+# this a square class that performs all operations on rectangle shape
 class rectangle:
     def __init__(self, length , width):
         self.length = length
@@ -23,21 +22,12 @@ class rectangle:
          return self.length * self.width
     
 
-class circle:
-    def __init__(self, radius):
-        self.radius = radius
-        
-
-    def circumference (self):
-        return 2*22/7*self.radius
-     
-    def area (self):
-         return 22/7* sqrt(self.radius)
+    
 
 # user choose the shape
 shape_choice = (input("enter the shape's name/ s for square /r for rectange /c for circle \n"))
 
-# square
+# user operations on square shape
 if (shape_choice == "s"):
     choice = (input("what do you want to calculate . type /p for perimeter/ a for area \n"))
     if(choice == "p"):
@@ -54,36 +44,19 @@ if (shape_choice == "s"):
         output = int(shape.areas())
         print(f" the area of the square of the length {num1} is {output}")
         
-# circle
-elif (shape_choice == "c"):
-    choice = (input("what do you want to calculate . type /c for circumference / a for area \n"))
-    if(choice == "c"):
-        num1 = (int(input("enter the radius of a  circle \n ")))
-        print(num1)
-        shape = circle(num1)
-        output = (circle.circumference())
-        print(f" the circumference of a circle of radius {num1} is {output}")
-
-    else :
-        num1 = (int(input("enter the length of side of a circle\n ")))
-        print(num1)
-        shape = Square(num1)
-        output = int(circle.areas())
-        print(f" the area of the circe of radius c{num1} is {output}")
-
-# rectangle
-if (shape_choice == "s"):
+# user operations on rectangle shape
+if (shape_choice == "r"):
     choice = (input("what do you want to calculate . type /p for perimeter/ a for area \n"))
     if(choice == "p"):
-        num1 = (int(input("enter the length of side of a square\n ")))
-        print(num1)
-        shape = Square(num1)
+        num1 = (int(input("enter the length of a recangle\n ")))
+        num2 = (int(input("enter the width of a recangle\n ")))
+        shape = rectangle(num1,num2)
         output = int(shape.perimeter())
-        print(f" the perimeter of the square of the length {num1} is {output}")
+        print(f" the perimeter of the rectangle of the length {num1}and width {num2} is {output}")
 
     else :
-        num1 = (int(input("enter the length of side of a square\n ")))
-        print(num1)
-        shape = Square(num1)
-        output = int(shape.areas())
-        print(f" the area of the square of the length {num1} is {output}")
+        num1 = (int(input("enter the length of a rectangle\n ")))
+        num2 = (int(input("enter the width of a rectangle\n ")))
+        shape = rectangle(num1,num2)
+        output = int(shape.area())
+        print(f" the area of the rectangle of the length {num1}and width {num2} is {output}")
